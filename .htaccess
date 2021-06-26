@@ -1,0 +1,18 @@
+<IfModule mod_rewrite.c>
+	Options +FollowSymLinks
+	RewriteEngine On
+
+	RewriteRule ^/bitrix/(.*) /bitrix/$1 [L]
+
+	RewriteRule ^$ index.php?verdor=zaur&module=zaur.test&scope=site&action=index.index [L]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-l
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^([^\/]+)/$ index.php?verdor=zaur&module=zaur.test&scope=site&action=$1.index [L]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-l
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^([^\/]+)/([^\/]+)/.*$ index.php?verdor=zaur&module=zaur.test&scope=site&action=$1.$2 [L]
+</IfModule>
