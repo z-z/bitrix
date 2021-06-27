@@ -1,15 +1,12 @@
 <?php
 
-use Bitrix\Main\Engine\Router;
+use Bitrix\Main\Application;
 use Bitrix\Main\Engine\Resolver;
-use Bitrix\Main\Engine\Controller;
-use Bitrix\Main\Engine\ControllerBuilder;
-use Bitrix\Main\Engine\CurrentUser;
 
 require_once $_SERVER['DOCUMENT_ROOT'] . '/vendor/autoload.php';
 require_once $_SERVER['DOCUMENT_ROOT'] . '/bitrix/modules/main/include/prolog_before.php';
 
-$app     = \Bitrix\Main\Application::getInstance();
+$app     = Application::getInstance();
 $context = $app->getContext();
 $request = $context->getRequest();
 
